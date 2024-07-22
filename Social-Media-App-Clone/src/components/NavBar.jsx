@@ -3,10 +3,14 @@ import GrootLogo from "../assets/noun-groot-3369771.svg";
 export default function NavBar() {
   const [isLogedIn] = useState(false);
   return (
-    <div className="navbar bg-base-100 p-5 flex-col gap-5 md:flex-row">
+    <div className="navbar bg-base-100 p-2 flex-col gap-5 md:flex-row border-solid border-slate-600 border-b">
       <div className="flex-1 items-center">
-        <img src={GrootLogo} alt="" width={50} />
-        <a className="btn btn-ghost text-xl">MEDIA</a>
+        <a className="btn btn-ghost text-xl">
+          <span>
+            <img src={GrootLogo} alt="" width={40} />
+          </span>
+          MEDIA
+        </a>
       </div>
       <div className="form-control flex-1">
         <input
