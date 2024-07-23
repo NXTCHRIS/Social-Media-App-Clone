@@ -1,11 +1,13 @@
 import NavBar from "./components/NavBar";
-
+import SideNav from "./components/SideNav";
+import { Box } from "@mui/material";
 function App() {
   return (
     <>
-      <nav>
+      <Box>
         <NavBar />
-      </nav>
+        <SideNav />
+      </Box>
     </>
   );
 }
