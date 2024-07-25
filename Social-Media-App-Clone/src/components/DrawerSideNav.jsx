@@ -19,7 +19,7 @@ export default function DrawerSideNav({
           {listContent.map((listItem) => {
             return (
               <li key={uuidv4()}>
-                <a>
+                <a className="text-xs md:text-base lg:text-lg">
                   {listItem.icon || null}
                   {listItem.text}
                 </a>
@@ -31,7 +31,7 @@ export default function DrawerSideNav({
             ? additinalContent.map((listItem) => {
                 return (
                   <li key={uuidv4()}>
-                    <a>
+                    <a className="text-xs md:text-base lg:text-lg">
                       {listItem.icon || null}
                       {listItem.text}
                     </a>

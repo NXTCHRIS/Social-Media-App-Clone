@@ -12,17 +12,18 @@ export default function NavBar() {
       bgColor={"bg-[rgba(13,17,20,255)]"}
       extraCss={"lg:flex-row border-b border-slate-600"}
     >
-      <div className="flex-1 justify-center">
+      <div className="flex-1 justify-start  lg:justify-start gap-2">
         <div className="hidden lg:flex items-center gap-2">
           <GiCompactDisc size={50} color="yellow" />
-          <h1 className="font-bold text-xl">GROOT</h1>
+          <h1 className="font-bold text-xs md:text-base lg:text-lg">GROOT</h1>
         </div>
         <DrawerButton
           extraCSS={"lg:hidden p-0"}
-          drawerBtn={<MdMenu size={25} />}
+          drawerBtn={<MdMenu size={20} />}
         />
+        <GiCompactDisc size={20} color="yellow" className="lg:hidden" />
       </div>
-      <div className="flex-1">
+      <div className="flex-1 hidden md:flex">
         <SearchBar
           type="text"
           placeholder="Search your favorite topics"
@@ -35,16 +36,16 @@ export default function NavBar() {
           menuItems={[{ text: "Log In" }, { text: "Sign In" }]}
           modifierClass={"dropdown-end"}
           extraCss={"md:hidden"}
-          btnIcon={<HiDotsHorizontal size={25} />}
+          btnIcon={<HiDotsHorizontal size={20} />}
         />
         <Button
           btnType={"btn-accent"}
-          extCss={"rounded-3xl hidden md:flex"}
+          extCss={"rounded-3xl hidden md:flex text-xs md:text-base lg:text-lg"}
           text={"Log In"}
         />
         <Button
           btnType={"btn-accent"}
-          extCss={"rounded-3xl hidden md:block"}
+          extCss={"rounded-3xl hidden md:block text-xs md:text-base lg:text-lg"}
           text={"Sign Up"}
         />
       </div>
