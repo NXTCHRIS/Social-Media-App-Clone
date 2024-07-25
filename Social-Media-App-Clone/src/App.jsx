@@ -1,5 +1,5 @@
-import NavBar from "./components/NavBar";
-import SideNav from "./components/SideNav";
+import NavBar from "./Layouts/NavBar";
+import SideNav from "./Layouts/SideNav";
 function App() {
   return (
     <>

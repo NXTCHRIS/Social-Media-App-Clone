@@ -1,11 +1,11 @@
 import { GiCompactDisc } from "react-icons/gi";
 export default function NavBar() {
   return (
-    <div className="navbar bg-base-100 lg:flex-row">
+    <div className="navbar bg-[rgba(13,17,20,255)] lg:flex-row border-b border-slate-600">
       <div className="flex-1">
         <label
           htmlFor="my-drawer-2"
-          className="btn  drawer-button flex lg:hidden"
+          className="btn drawer-button flex lg:hidden btn-ghost"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,37 +34,23 @@ export default function NavBar() {
         />
       </div>
       <div className="flex-1 gap-2 justify-end">
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
-            </div>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-md dropdown-content dropdown-end bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
+        <details className="dropdown dropdown-end lg:hidden">
+          <summary className="btn btn-ghost m-1">...</summary>
+          <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 mt-3 shadow">
             <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
+              <a>Item 1</a>
             </li>
             <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
+              <a>Item 2</a>
             </li>
           </ul>
-        </div>
+        </details>
+        <button className="btn btn-accent  rounded-2xl hidden lg:block">
+          Sign Up
+        </button>
+        <button className="btn btn-accent rounded-2xl hidden lg:block">
+          Log In
+        </button>
       </div>
     </div>
   );
