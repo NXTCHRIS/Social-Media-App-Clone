@@ -11,9 +11,9 @@ export default function DrawerSideNav({
 }) {
   let classCluster = `menu bg-[rgba(13,17,20,255)] border-r border-slate-600 text-base-content min-h-full w-1/8 lg:w-80 p-4 ${drawerContentCss}`;
   return (
-    <div className="drawer lg:drawer-open">
+    <div className="drawer lg:drawer-open w-min">
       <DrawerToggle />
-      <div className="drawer-content hidden">{<h1>GROOT</h1>}</div>
+      {/* <div className="drawer-content hidden">{<h1>GROOT</h1>}</div> */}
       <div className="drawer-side">
         <ul className={classCluster}>
           {listContent.map((listItem) => {
