@@ -9,7 +9,7 @@ export default function PopularsList({ listTitle }) {
     { text: "r/DestinyTheGame" },
   ];
   return (
-    <ul className="menu bg-base-200 rounded-box fixed mx-auto w-contain  h-1/2 p-10 items-center">
+    <ul className="menu bg-black rounded-box fixed mx-auto w-contain  h-1/2 p-10 items-center">
       <h1 className="py-2 px-4 text-base lg:text-xl">{listTitle}</h1>
       {popularItems.map((item) => {
         return (
