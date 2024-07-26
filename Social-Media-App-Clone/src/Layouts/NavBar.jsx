@@ -16,8 +16,8 @@ export default function NavBar() {
     >
       <div className="flex-1 justify-start  lg:justify-start gap-2">
         <div className="hidden lg:flex items-center gap-2">
-          <GiCompactDisc size={50} color="yellow" />
-          <h1 className="font-bold text-xs md:text-base lg:text-lg">GROOT</h1>
+          <GiCompactDisc size={35} color="yellow" />
+          <h1 className="font-bold text-xs md:text-sm lg:text-base">GROOT</h1>
         </div>
         <DrawerButton
           extraCSS={"lg:hidden p-0"}
@@ -42,12 +42,12 @@ export default function NavBar() {
         />
         <Button
           btnType={"btn-accent"}
-          extCss={"rounded-3xl hidden md:flex text-xs md:text-base lg:text-lg"}
+          extCss={"rounded-3xl hidden md:flex text-xs md:text-sm lg:text-base"}
           text={"Log In"}
         />
         <Button
           btnType={"btn-accent"}
-          extCss={"rounded-3xl hidden md:block text-xs md:text-base lg:text-lg"}
+          extCss={"rounded-3xl hidden md:block text-xs md:text-sm lg:text-base"}
           text={"Sign Up"}
         />
       </div>
