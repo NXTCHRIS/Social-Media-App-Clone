@@ -9,7 +9,7 @@ export default function DrawerSideNav({
   drawerContentCss,
   additinalContent,
 }) {
-  let classCluster = `menu bg-[rgba(13,17,20,255)] border-r border-slate-600 text-base-content min-h-full w-1/8 lg:w-80 p-4  fixed top-0 left-0 lg:sticky pt-20 ${drawerContentCss}`;
+  let classCluster = `menu bg-[rgba(13,17,20,255)] border-r border-slate-600 text-base-content min-h-full w-1/8 lg:w-80 p-4 fixed lg:sticky xl:fixed top-0 left-0 pt-20 ${drawerContentCss}`;
   return (
     <div className="drawer lg:drawer-open w-min">
       <DrawerToggle />
