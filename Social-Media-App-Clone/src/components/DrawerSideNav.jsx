@@ -9,9 +9,9 @@ export default function DrawerSideNav({
   drawerContentCss,
   additinalContent,
 }) {
-  let classCluster = `menu bg-[rgba(13,17,20,255)] border-r border-slate-600 text-base-content min-h-full w-1/8 lg:w-80 p-4 fixed lg:sticky xl:fixed top-0 left-0 pt-20 ${drawerContentCss}`;
+  let classCluster = `menu bg-[rgba(13,17,20,255)] border-r border-slate-600 text-base-content min-h-full w-1/8 lg:w-50 p-4 fixed lg:sticky xl:fixed top-0 left-0 pt-20 ${drawerContentCss}`;
   return (
-    <div className="drawer lg:drawer-open w-min">
+    <div className="drawer lg:drawer-open w-min lg:flex-1">
       <DrawerToggle />
       {/* <div className="drawer-content hidden">{<h1>GROOT</h1>}</div> */}
       <div className="drawer-side z-50">
