@@ -1,17 +1,20 @@
-import FeedWrapper from "./Layouts/FeedWrapper";
-import NavBar from "./Layouts/NavBar";
-import RightNavWrapper from "./Layouts/RightNavWrapper";
-import SideNav from "./Layouts/SideNav";
+/* eslint-disable no-undef */
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    loader: async () => {
+      return fetch("https://www.reddit.com/r/popular.json?raw_json=1");
+    },
+  },
+]);
 function App() {
   return (
-    <>
-      <NavBar />
-      <div className="flex">
-        <SideNav />
-        <FeedWrapper />
-        <RightNavWrapper />
-      </div>
-    </>
+    <RouterProvider router={router}>
+      <Home />
+    </RouterProvider>
   );
 }
 export default App;
