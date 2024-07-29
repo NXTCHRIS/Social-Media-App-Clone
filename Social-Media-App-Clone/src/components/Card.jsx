@@ -28,9 +28,9 @@ export default function Card({ post }) {
               />
             </figure>
           ) : post.data.media_metadata ? (
-            <div>
+            <div className="">
               {Object.values(post.data.media_metadata).map((item) => {
-                return <img key={uuidv4()} src={item.s.u} />;
+                return <img key={uuidv4()} src={item.s.u} className="mb-2" />;
               })}
             </div>
           ) : null}
