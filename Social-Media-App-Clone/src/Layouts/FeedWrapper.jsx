@@ -4,7 +4,7 @@ import Card from "../components/Card";
 export default function FeedWrapper() {
   const posts = useLoaderData();
   return (
-    <div className="flex flex-col mx-auto gap-10 mt-32 mb-32 flex-1">
+    <div className="flex flex-col mx-auto gap-10 mt-24 mb-32 flex-1">
       {posts.data.children.map((item) => {
         return <Card key={uuidv4()} post={item} />;
       })}
