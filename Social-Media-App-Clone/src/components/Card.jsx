@@ -51,7 +51,7 @@ export default function Card({ post }) {
             {post.data.selftext}
           </p>
         ) : null}
-        <div className="card-actions justify-start gap-2 w-6/12 py-3 ">
+        <div className="card-actions justify-start gap-2 md:w-6/12 py-3 ">
           <Button
             btnIcon={<MdArrowCircleUp size={25} color="white" />}
             text={post.data.ups}
