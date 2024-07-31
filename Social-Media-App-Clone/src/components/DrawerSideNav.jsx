@@ -4,6 +4,7 @@ import { IoCloseSharp } from "react-icons/io5";
 import DrawerToggle from "./DrawerToggle";
 import Divider from "./Divider";
 import DrawerButton from "./DrawerButton";
+import { Link } from "react-router-dom";
 export default function DrawerSideNav({
   listContent,
   drawerContentCss,
@@ -19,10 +20,21 @@ export default function DrawerSideNav({
           {listContent.map((listItem) => {
             return (
               <li key={uuidv4()}>
-                <a className="text-xs md:text-sm lg:text-base">
+                <Link
+                  className="text-xs md:text-sm lg:text-base"
+                  to={
+                    listItem.text === "Gaming"
+                      ? "/Gaming"
+                      : listItem.text == "Movies & TV's"
+                      ? "/Movies"
+                      : listItem.text == "Sport"
+                      ? "/Sports"
+                      : "/"
+                  }
+                >
                   {listItem.icon || null}
                   {listItem.text}
-                </a>
+                </Link>
               </li>
             );
           })}
@@ -31,10 +43,10 @@ export default function DrawerSideNav({
             ? additinalContent.map((listItem) => {
                 return (
                   <li key={uuidv4()}>
-                    <a className="text-xs md:text-base lg:text-lg">
+                    <Link className="text-xs md:text-base lg:text-lg">
                       {listItem.icon || null}
                       {listItem.text}
-                    </a>
+                    </Link>
                   </li>
                 );
               })
