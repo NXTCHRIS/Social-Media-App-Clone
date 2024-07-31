@@ -34,6 +34,17 @@ const router = createBrowserRouter([
   {
     path: "/r/:channelName",
     element: <SubChannelPage />,
+    loader: async ({ params }) => {
+      let channelData = await fetch(
+        `https://www.reddit.com/r/${params.channelName}/about.json`
+      );
+      let channelPosts = await fetch(
+        `https://www.reddit.com/r/${params.channelName}.json`
+      );
+      let chData = await channelData.json();
+      let chPosts = await channelPosts.json();
+      return { chData, chPosts };
+    },
   },
 ]);
 function App() {

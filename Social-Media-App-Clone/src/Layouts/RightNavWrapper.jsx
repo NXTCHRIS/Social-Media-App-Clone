@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 import PopularsList from "../components/PopularsList";
 export default function RightNavWrapper() {
   const posts = useLoaderData();
-  console.log(posts);
   let popularSubReddits = [];
   posts.data.children.map((post) => {
     popularSubReddits.push(`${post.data.subreddit}`);
