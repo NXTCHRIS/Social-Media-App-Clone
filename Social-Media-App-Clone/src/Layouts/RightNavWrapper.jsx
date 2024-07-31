@@ -8,7 +8,7 @@ export default function RightNavWrapper() {
     popularSubReddits.push(`r/${post.data.subreddit}`);
   });
   return (
-    <div className="hidden lg:flex w-4/12 justify-start p-20">
+    <div className="hidden lg:flex lg:w-3/12 justify-center">
       <PopularsList
         listTitle={"Popular Comunities"}
         popularItems={popularSubReddits}
