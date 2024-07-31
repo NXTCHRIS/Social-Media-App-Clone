@@ -5,17 +5,36 @@ import Button from "../components/Button";
 import { MdArrowCircleUp } from "react-icons/md";
 import { MdComment } from "react-icons/md";
 import { IoMdShareAlt } from "react-icons/io";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import ReactPlayer from "react-player";
 import { v4 as uuidv4 } from "uuid";
 export default function Card({ post }) {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)]  w-contain xl:w-6/12 mx-auto border-t rounded-none">
+    <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:w-9/12 xl:mx-auto border-t rounded-none">
       <div className="">
         <h3 className="py-3">r/{post.data.subreddit}</h3>
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
           {post.data.title}
         </h1>
-        <div className="">
+        <div className="w-full ">
           {post.data.media ? (
             <ReactPlayer
               url={
@@ -39,11 +58,29 @@ export default function Card({ post }) {
               />
             </figure>
           ) : post.data.media_metadata ? (
-            <div className="">
+            <Carousel
+              swipeable={true}
+              draggable={false}
+              showDots={true}
+              responsive={responsive}
+              infinite={true}
+              autoPlaySpeed={1000}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
               {Object.values(post.data.media_metadata).map((item) => {
-                return <img key={uuidv4()} src={item.s.u} className="mb-2" />;
+                return (
+                  <div key={uuidv4()} className="w-full">
+                    <img src={item.s.u} className="mb-2 aspect-square " />
+                  </div>
+                );
               })}
-            </div>
+            </Carousel>
           ) : null}
         </div>
         {post.data.selftext ? (
