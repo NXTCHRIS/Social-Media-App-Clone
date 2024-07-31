@@ -34,7 +34,7 @@ export default function Card({ post }) {
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
           {post.data.title}
         </h1>
-        <div className="w-[320px] md:w-full mx-auto">
+        <div className="max-w-xs md:max-w-full  mx-auto">
           {post.data.media ? (
             <ReactPlayer
               url={
