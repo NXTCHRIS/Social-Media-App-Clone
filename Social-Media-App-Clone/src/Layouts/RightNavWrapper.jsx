@@ -5,7 +5,7 @@ export default function RightNavWrapper() {
   console.log(posts);
   let popularSubReddits = [];
   posts.data.children.map((post) => {
-    popularSubReddits.push(`r/${post.data.subreddit}`);
+    popularSubReddits.push(`${post.data.subreddit}`);
   });
   return (
     <div className="hidden lg:flex lg:w-3/12 justify-center">

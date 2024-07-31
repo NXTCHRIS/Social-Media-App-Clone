@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 export default function PopularsList({ listTitle, popularItems }) {
   return (
@@ -8,7 +9,9 @@ export default function PopularsList({ listTitle, popularItems }) {
       {popularItems.map((item) => {
         return (
           <li key={`${uuidv4()}`} className="lg:text-base px-5">
-            <a key={`${uuidv4()}`}>{item}</a>
+            <Link key={`${uuidv4()}`} to={`/r/${item}`}>
+              {`r/${item}`}
+            </Link>
           </li>
         );
       })}
