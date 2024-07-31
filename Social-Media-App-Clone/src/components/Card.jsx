@@ -34,7 +34,7 @@ export default function Card({ post }) {
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
           {post.data.title}
         </h1>
-        <div className="w-[320px] md:w-full">
+        <div className="w-[320px] md:w-full mx-auto">
           {post.data.media ? (
             <ReactPlayer
               url={
@@ -72,6 +72,7 @@ export default function Card({ post }) {
               removeArrowOnDeviceType={["tablet", "mobile"]}
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
+              className=""
             >
               {Object.values(post.data.media_metadata).map((item) => {
                 return (
