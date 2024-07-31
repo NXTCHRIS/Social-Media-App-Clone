@@ -51,21 +51,27 @@ export default function Card({ post }) {
             {post.data.selftext}
           </p>
         ) : null}
-        <div className="card-actions justify-start gap-2 md:w-6/12 py-3 ">
+        <div className="card-actions justify-start gap-2 md:w-6/12 py-3 flex-nowrap">
           <Button
             btnIcon={<MdArrowCircleUp size={25} color="white" />}
             text={post.data.ups}
-            extCss={"text-wrap overflow-hidden text-white"}
+            extCss={
+              "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center"
+            }
           />
           <Button
             btnIcon={<MdComment size={25} color="white" />}
             text={post.data.num_comments}
-            extCss={"text-wrap overflow-hidden text-white"}
+            extCss={
+              "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center"
+            }
           />
           <Button
             btnIcon={<IoMdShareAlt size={25} color="white" />}
             text={"SHARE"}
-            extCss={"text-wrap overflow-hidden text-white"}
+            extCss={
+              "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center"
+            }
           />
         </div>
       </div>
