@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
+import SubChannelPage from "./pages/SubChannelPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     loader: async () => {
       return fetch("https://www.reddit.com/search.json?q=Sport&raw_json=1");
     },
+  },
+  {
+    path: "/r/:channelName",
+    element: <SubChannelPage />,
   },
 ]);
 function App() {
