@@ -9,7 +9,7 @@ import ReactPlayer from "react-player";
 import { v4 as uuidv4 } from "uuid";
 export default function Card({ post }) {
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)] w-contain border-t rounded-none">
+    <div className="card card-compact bg-[rgba(13,17,20,255)]  w-contain xl:w-6/12 mx-auto border-t rounded-none">
       <div className="">
         <h3 className="py-3">r/{post.data.subreddit}</h3>
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
