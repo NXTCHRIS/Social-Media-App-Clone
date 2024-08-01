@@ -8,7 +8,7 @@ export default function SubChannelPage() {
       <div className="flex">
         <SideNav />
         <FeedWrapperSub />
-        <div className="flex-1"></div>
+        <div className="hidden xl:flex xl:w-3/12"></div>
       </div>
     </>
   );
