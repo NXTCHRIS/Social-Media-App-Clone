@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         `https://www.reddit.com/r/${params.channelName}/about.json`
       );
       let channelPosts = await fetch(
-        `https://www.reddit.com/r/${params.channelName}.json`
+        `https://www.reddit.com/r/${params.channelName}.json?raw_json=1`
       );
       let chData = await channelData.json();
       let chPosts = await channelPosts.json();
