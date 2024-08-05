@@ -9,6 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ReactPlayer from "react-player";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 export default function Card({ post }) {
   const responsive = {
     desktop: {
@@ -32,7 +33,12 @@ export default function Card({ post }) {
       <div className="">
         <h3 className="py-3">r/{post.data.subreddit}</h3>
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
-          {post.data.title}
+          <Link
+            to={`/p/${post.data.subreddit}/${post.data.id}/${post.data.title}`}
+          >
+            {" "}
+            {post.data.title}
+          </Link>
         </h1>
         <div className="max-w-xs md:max-w-full  mx-auto">
           {post.data.media ? (

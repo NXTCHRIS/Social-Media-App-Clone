@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import SubChannelPage from "./pages/SubChannelPage";
+import PostPage from "./pages/PostPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +45,28 @@ const router = createBrowserRouter([
       let chData = await channelData.json();
       let chPosts = await channelPosts.json();
       return { chData, chPosts };
+    },
+  },
+  {
+    path: "/p/:channelName/:postId/:postTitle",
+    element: <PostPage />,
+    loader: async ({ params }) => {
+      let newSplit = params.postTitle.split(" ");
+      let articleTitle = [];
+      newSplit.forEach((word, index) => {
+        if (newSplit.length - 1 != index) {
+          articleTitle.push(`${word}_`);
+        } else {
+          articleTitle.push(`${word}`);
+        }
+      });
+      articleTitle.join("");
+      console.log(params);
+      let postData = await fetch(
+        `https://www.reddit.com/r/${params.channelName}/comments/${params.postId}/${articleTitle}/.json?raw_json=1`
+      );
+
+      return postData;
     },
   },
 ]);
