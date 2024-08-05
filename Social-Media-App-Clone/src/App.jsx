@@ -8,28 +8,28 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     loader: async () => {
-      return fetch(import.meta.env.VITE_API_ENDPOINT_POPULAR);
+      return fetch("https://www.reddit.com/r/popular.json?raw_json=1");
     },
   },
   {
     path: "/Gaming",
     element: <Home />,
     loader: async () => {
-      return fetch(import.meta.env.VITE_API_ENDPOINT_GAMING);
+      return fetch("https://www.reddit.com/search.json?q=gaming&raw_json=1");
     },
   },
   {
     path: "/Movies",
     element: <Home />,
     loader: async () => {
-      return fetch(import.meta.env.VITE_API_ENDPOINT_MOVIES);
+      return fetch("https://www.reddit.com/search.json?q=Movies&raw_json=1");
     },
   },
   {
     path: "/Sports",
     element: <Home />,
     loader: async () => {
-      return fetch(import.meta.env.VITE_API_ENDPOINT_SPORTS);
+      return fetch("https://www.reddit.com/search.json?q=Sport&raw_json=1");
     },
   },
   {
@@ -61,6 +61,7 @@ const router = createBrowserRouter([
         }
       });
       articleTitle.join("");
+      console.log(params);
       let postData = await fetch(
         `https://www.reddit.com/r/${params.channelName}/comments/${params.postId}/${articleTitle}/.json?raw_json=1`
       );
