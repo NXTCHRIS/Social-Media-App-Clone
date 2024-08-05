@@ -31,7 +31,9 @@ export default function Card({ post }) {
   return (
     <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:w-9/12 xl:mx-auto border-t rounded-none">
       <div className="">
-        <h3 className="py-3">r/{post.data.subreddit}</h3>
+        <h3 className="py-3">
+          <Link to={`/r/${post.data.subreddit}`}>r/{post.data.subreddit}</Link>
+        </h3>
         <h1 className="card-title text-sm lg:text-xl py-3 text-white">
           <Link
             to={`/p/${post.data.subreddit}/${post.data.id}/${post.data.title}`}
