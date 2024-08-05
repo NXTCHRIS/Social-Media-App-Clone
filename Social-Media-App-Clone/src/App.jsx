@@ -8,28 +8,28 @@ const router = createBrowserRouter([
     path: "/",
     element: <Home />,
     loader: async () => {
-      return fetch("https://www.reddit.com/r/popular.json?raw_json=1");
+      return fetch(import.meta.env.VITE_API_ENDPOINT_POPULAR);
     },
   },
   {
     path: "/Gaming",
     element: <Home />,
     loader: async () => {
-      return fetch("https://www.reddit.com/search.json?q=gaming&raw_json=1");
+      return fetch(import.meta.env.VITE_API_ENDPOINT_GAMING);
     },
   },
   {
     path: "/Movies",
     element: <Home />,
     loader: async () => {
-      return fetch("https://www.reddit.com/search.json?q=Movies&raw_json=1");
+      return fetch(import.meta.env.VITE_API_ENDPOINT_MOVIES);
     },
   },
   {
     path: "/Sports",
     element: <Home />,
     loader: async () => {
-      return fetch("https://www.reddit.com/search.json?q=Sport&raw_json=1");
+      return fetch(import.meta.env.VITE_API_ENDPOINT_SPORTS);
     },
   },
   {
