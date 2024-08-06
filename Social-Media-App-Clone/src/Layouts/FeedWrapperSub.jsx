@@ -34,7 +34,7 @@ export default function FeedWrapper() {
       </div> */}
       {posts.chPosts.data.children.map((item) => {
         return (
-          <div key={uuidv4()}>
+          <div key={uuidv4()} className="w-full">
             <Card key={uuidv4()} post={item} />
             <hr className="w-full bg-slate-200 my-2" />
           </div>
