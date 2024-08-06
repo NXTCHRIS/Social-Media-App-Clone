@@ -10,9 +10,7 @@ export default function NavBar() {
   return (
     <NavBarWrapper
       bgColor={"bg-[rgba(13,17,20,255)]"}
-      extraCss={
-        "lg:flex-row border-b border-slate-600 fixed top-0 left-0 right-0 z-[1000]"
-      }
+      extraCss={"lg:flex-row border-b border-slate-600 z-[1000]"}
     >
       <div className="flex-1 justify-start  lg:justify-start gap-2">
         <div className="hidden lg:flex items-center gap-2">

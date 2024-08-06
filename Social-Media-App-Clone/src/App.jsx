@@ -61,7 +61,6 @@ const router = createBrowserRouter([
         }
       });
       articleTitle.join("");
-      console.log(params);
       let postData = await fetch(
         `https://www.reddit.com/r/${params.channelName}/comments/${params.postId}/${articleTitle}/.json?raw_json=1`
       );

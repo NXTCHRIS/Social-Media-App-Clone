@@ -3,9 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 import Card from "../components/Card";
 export default function FeedWrapper() {
   const posts = useLoaderData();
-  console.log(posts);
   return (
-    <div className="flex flex-col mx-auto gap-10 mt-24 mb-32 lg:w-6/12">
+    <div className="flex flex-col mx-auto gap-10 lg:w-6/12">
       <div className="flex flex-col items-start max-w-screen-sm xl:w-9/12 xl:mx-auto ">
         {posts.chData.data.banner_img ? (
           <div className="w-full">

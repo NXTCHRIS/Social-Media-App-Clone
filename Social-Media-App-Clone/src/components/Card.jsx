@@ -29,8 +29,8 @@ export default function Card({ post }) {
     },
   };
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:w-9/12 xl:mx-auto border-t rounded-none">
-      <div className="">
+    <div className="card card-compact bg-[rgba(13,17,20,255)] border-t rounded-none">
+      <div>
         <h3 className="py-3">
           <Link to={`/r/${post.data.subreddit}`}>r/{post.data.subreddit}</Link>
         </h3>
@@ -42,7 +42,7 @@ export default function Card({ post }) {
             {post.data.title}
           </Link>
         </h1>
-        <div className="max-w-xs md:max-w-full  mx-auto">
+        <div className="">
           {post.data.media ? (
             <ReactPlayer
               url={
