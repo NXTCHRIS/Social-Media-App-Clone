@@ -29,7 +29,7 @@ export default function Card({ post }) {
     },
   };
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)] hover:bg-slate-800 p-5">
+    <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:mx-auto rounded-lg lg:p-10 hover:bg-slate-700">
       <div className="">
         <h3 className="py-3">
           <Link to={`/r/${post.data.subreddit}`}>r/{post.data.subreddit}</Link>
@@ -42,7 +42,7 @@ export default function Card({ post }) {
             {post.data.title}
           </Link>
         </h1>
-        <div className="">
+        <div className="max-w-xs md:max-w-full  mx-auto">
           {post.data.media ? (
             <ReactPlayer
               url={
@@ -97,7 +97,9 @@ export default function Card({ post }) {
           ) : null}
         </div>
         {post.data.selftext ? (
-          <p className="text-xs lg:text-sm h-auto py-3">{post.data.selftext}</p>
+          <p className="text-xs lg:text-sm h-28 overflow-auto py-3">
+            {post.data.selftext}
+          </p>
         ) : null}
         <div className="card-actions justify-start gap-2 md:w-6/12 py-3 flex-nowrap">
           <Button

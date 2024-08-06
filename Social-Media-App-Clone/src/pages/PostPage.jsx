@@ -13,10 +13,14 @@ export default function PostPage() {
         <div className=" w-0 lg:w-3/12">
           <SideNav />
         </div>
-        <div className="flex-1">
+        <div className="w-full lg:w-9/12">
           <Card post={postData[0].data.children[0]} />
           {postData[1].data.children.map((comm) => {
-            return <Comment key={uuidv4()} comm={comm} />;
+            return (
+              <div key={uuidv4()} className="lg:w-9/12 mx-auto">
+                <Comment key={uuidv4()} comm={comm} />
+              </div>
+            );
           })}
         </div>
         <div className=" w-0 lg:w-3/12"></div>

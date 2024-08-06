@@ -4,8 +4,13 @@ import Card from "../components/Card";
 export default function FeedWrapper() {
   const posts = useLoaderData();
   return (
-    <div className="flex flex-col mx-auto gap-10 lg:w-6/12 mt-2">
-      <div className="flex flex-col items-start max-w-screen-sm xl:w-9/12 xl:mx-auto ">
+    <>
+      {/* <div className="">
+        {posts.chData.data.banner_img ? (
+          <img src={posts.chData.data.banner_img} alt="" width={320} />
+        ) : null}
+      </div> */}
+      {/* <div className="flex flex-col items-start max-w-screen-sm xl:w-9/12 xl:mx-auto ">
         {posts.chData.data.banner_img ? (
           <div className="w-full">
             <img src={posts.chData.data.banner_img} alt="" />
@@ -26,16 +31,16 @@ export default function FeedWrapper() {
             </div>
           ) : null}
         </div>
-      </div>
+      </div> */}
       {posts.chPosts.data.children.map((item) => {
         return (
-          <>
+          <div key={uuidv4()}>
             <Card key={uuidv4()} post={item} />
-            <hr className="w-full bg-slate-200" />
-          </>
+            <hr className="w-full bg-slate-200 my-2" />
+          </div>
         );
       })}
-    </div>
+    </>
   );
 }
 3;
