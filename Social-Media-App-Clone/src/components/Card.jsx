@@ -29,8 +29,8 @@ export default function Card({ post }) {
     },
   };
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)] border-t rounded-none">
-      <div>
+    <div className="card card-compact bg-[rgba(13,17,20,255)] hover:bg-slate-800 p-5">
+      <div className="">
         <h3 className="py-3">
           <Link to={`/r/${post.data.subreddit}`}>r/{post.data.subreddit}</Link>
         </h3>
@@ -97,9 +97,7 @@ export default function Card({ post }) {
           ) : null}
         </div>
         {post.data.selftext ? (
-          <p className="text-xs lg:text-sm h-28 overflow-auto py-3">
-            {post.data.selftext}
-          </p>
+          <p className="text-xs lg:text-sm h-auto py-3">{post.data.selftext}</p>
         ) : null}
         <div className="card-actions justify-start gap-2 md:w-6/12 py-3 flex-nowrap">
           <Button
