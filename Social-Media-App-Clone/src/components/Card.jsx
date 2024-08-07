@@ -109,13 +109,17 @@ export default function Card({ post }) {
               "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center"
             }
           />
-          <Button
-            btnIcon={<MdComment size={25} color="white" />}
-            text={post.data.num_comments}
-            extCss={
-              "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center"
-            }
-          />
+          <Link
+            to={`/p/${post.data.subreddit}/${post.data.id}/${post.data.title}`}
+          >
+            <Button
+              btnIcon={<MdComment size={25} color="white" />}
+              text={post.data.num_comments}
+              extCss={
+                "text-wrap overflow-hidden text-white lg:btn-md btn-sm items-center flex-nowrap"
+              }
+            />
+          </Link>
           <Button
             btnIcon={<IoMdShareAlt size={25} color="white" />}
             text={"SHARE"}

@@ -12,7 +12,7 @@ export default function Comment({ comm }) {
       <h3 className="font-bold text-sm md:text-base lg:text-lg xl:text-xl p-5">
         u/{comm.data.author}
       </h3>
-      <p className="p-5">{comm.data.body}</p>
+      <p className="p-5 overflow-hidden">{comm.data.body}</p>
       <div className="flex gap-2 ml-5 mb-5">
         <Button text={comm.data.ups} btnIcon={<MdArrowCircleUp size={25} />} />
         <Button
