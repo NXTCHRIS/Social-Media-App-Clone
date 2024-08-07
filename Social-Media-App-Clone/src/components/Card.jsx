@@ -43,58 +43,62 @@ export default function Card({ post }) {
           </Link>
         </h1>
         <div className="max-w-xs md:max-w-full  mx-auto">
-          {post.data.media ? (
-            <ReactPlayer
-              url={
-                post.data.media.reddit_video
-                  ? post.data.media.reddit_video.dash_url
-                  : post.data.media.reddit_video
-              }
-              controls
-              width="full"
-              // light={
-              //   post.data.preview.images[0].source.url
-              //     ? post.data.preview.images[0].source.url
-              //     : "white"
-              // }
-            />
-          ) : post.data.preview ? (
-            <figure>
-              <img
-                src={
-                  post.data.preview
-                    ? post.data.preview.images[0].source.url
-                    : null
+          <Link
+            to={`/p/${post.data.subreddit}/${post.data.id}/${post.data.title}`}
+          >
+            {post.data.media ? (
+              <ReactPlayer
+                url={
+                  post.data.media.reddit_video
+                    ? post.data.media.reddit_video.dash_url
+                    : post.data.media.reddit_video
                 }
-                className="w-full"
+                controls
+                width="full"
+                // light={
+                //   post.data.preview.images[0].source.url
+                //     ? post.data.preview.images[0].source.url
+                //     : "white"
+                // }
               />
-            </figure>
-          ) : post.data.media_metadata ? (
-            <Carousel
-              swipeable={true}
-              draggable={false}
-              showDots={true}
-              responsive={responsive}
-              infinite={true}
-              autoPlaySpeed={1000}
-              keyBoardControl={true}
-              customTransition="all .5"
-              transitionDuration={500}
-              containerClass="carousel-container"
-              removeArrowOnDeviceType={["tablet", "mobile"]}
-              dotListClass="custom-dot-list-style"
-              itemClass="carousel-item-padding-40-px"
-              className=""
-            >
-              {Object.values(post.data.media_metadata).map((item) => {
-                return (
-                  <div key={uuidv4()} className="w-full">
-                    <img src={item.s.u} className="mb-2 aspect-square " />
-                  </div>
-                );
-              })}
-            </Carousel>
-          ) : null}
+            ) : post.data.preview ? (
+              <figure>
+                <img
+                  src={
+                    post.data.preview
+                      ? post.data.preview.images[0].source.url
+                      : null
+                  }
+                  className="w-full"
+                />
+              </figure>
+            ) : post.data.media_metadata ? (
+              <Carousel
+                swipeable={true}
+                draggable={false}
+                showDots={true}
+                responsive={responsive}
+                infinite={true}
+                autoPlaySpeed={1000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+                className=""
+              >
+                {Object.values(post.data.media_metadata).map((item) => {
+                  return (
+                    <div key={uuidv4()} className="w-full">
+                      <img src={item.s.u} className="mb-2 aspect-square " />
+                    </div>
+                  );
+                })}
+              </Carousel>
+            ) : null}
+          </Link>
         </div>
         {post.data.selftext ? (
           <p className="text-xs lg:text-sm h-28 overflow-auto py-3">
