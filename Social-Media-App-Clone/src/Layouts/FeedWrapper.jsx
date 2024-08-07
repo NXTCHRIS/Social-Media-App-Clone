@@ -9,7 +9,7 @@ export default function FeedWrapper() {
         return (
           <div key={uuidv4()}>
             <Card key={uuidv4()} post={item} />
-            <hr className="w-full bg-slate-200" />
+            <hr className="w-6/12 bg-slate-200 mx-auto" />
           </div>
         );
       })}
