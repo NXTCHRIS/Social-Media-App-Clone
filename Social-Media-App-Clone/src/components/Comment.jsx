@@ -6,7 +6,6 @@ import { MdComment } from "react-icons/md";
 import { useState } from "react";
 export default function Comment({ comm }) {
   const [showComm, setShowComm] = useState(false);
-
   return (
     <div className="border mb-5 rounded-xl m-5" key={uuidv4()}>
       <h3 className="font-bold text-sm md:text-base lg:text-lg xl:text-xl p-5">
@@ -23,24 +22,30 @@ export default function Comment({ comm }) {
               setShowComm(true);
             }
           }}
-          text={"GROOT"}
+          text={"See Replies"}
           btnIcon={<MdComment size={25} />}
         />
       </div>
       {showComm ? (
         <div className="bg-slate-700 border-b rounded-b-xl">
-          {comm.data.replies
-            ? comm.data.replies.data.children.map((reply) => {
-                return (
-                  <div key={uuidv4()}>
-                    <h3 className="font-bold text-sm md:text-base lg:text-lg xl:text-xl p-5">
-                      {reply.data.author ? "u/" + reply.data.author : null}
-                    </h3>
-                    <p className="p-5">{reply.data.body}</p>
-                  </div>
-                );
-              })
-            : null}
+          {comm.data.replies ? (
+            comm.data.replies.data.children.map((reply) => {
+              return (
+                <div key={uuidv4()}>
+                  <h3 className="font-bold text-sm md:text-base lg:text-lg xl:text-xl p-5">
+                    {reply.data.author ? "u/" + reply.data.author : null}
+                  </h3>
+                  <p className="p-5">{reply.data.body}</p>
+                </div>
+              );
+            })
+          ) : (
+            <div key={uuidv4()}>
+              <h3 className="font-bold text-sm md:text-base lg:text-lg xl:text-xl p-5">
+                There are no comments
+              </h3>
+            </div>
+          )}
         </div>
       ) : null}
     </div>

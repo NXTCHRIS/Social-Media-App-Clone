@@ -1,7 +1,11 @@
 import NavBar from "../Layouts/NavBar";
 import SideNav from "../Layouts/SideNav";
 import FeedWrapperSub from "../Layouts/FeedWrapperSub";
+import { useEffect } from "react";
 export default function SubChannelPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <NavBar />
