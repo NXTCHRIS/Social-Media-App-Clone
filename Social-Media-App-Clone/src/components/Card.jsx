@@ -105,7 +105,7 @@ export default function Card({ post }) {
             {post.data.selftext}
           </p>
         ) : null}
-        <div className="card-actions justify-start gap-2 md:w-6/12 py-3 flex-nowrap">
+        <div className="card-actions justify-start gap-1 md:w-6/12 py-3 flex-nowrap">
           <Button
             btnIcon={<MdArrowCircleUp size={25} color="white" />}
             text={post.data.ups}
