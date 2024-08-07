@@ -29,7 +29,7 @@ export default function Card({ post }) {
     },
   };
   return (
-    <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:mx-auto rounded-lg lg:p-10 hover:bg-slate-700 mx-auto">
+    <div className="card card-compact bg-[rgba(13,17,20,255)] max-w-screen-sm xl:mx-auto rounded-lg p-3 lg:p-10 hover:bg-slate-700 mx-auto">
       <div className="">
         <h3 className="py-3">
           <Link to={`/r/${post.data.subreddit}`}>r/{post.data.subreddit}</Link>
