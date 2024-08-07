@@ -55,11 +55,11 @@ export default function Card({ post }) {
                 }
                 controls
                 width="full"
-                // light={
-                //   post.data.preview.images[0].source.url
-                //     ? post.data.preview.images[0].source.url
-                //     : "white"
-                // }
+                light={
+                  post.data.preview.images[0].source.url
+                    ? post.data.preview.images[0].source.url
+                    : "white"
+                }
               />
             ) : post.data.preview ? (
               <figure>
